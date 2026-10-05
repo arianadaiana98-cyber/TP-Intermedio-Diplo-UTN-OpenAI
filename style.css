@@ -1,16 +1,13 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 body{
-    padding: 0 70px;
     background-color: black;
     color:white;
     padding: 0 clamp(16px,5vw,60px);
@@ -81,7 +78,7 @@ body{
     color:white;
 }
 
-.menu-horizontal a, .header-btn, .header-btn-expert{
+.menu-horizontal a, .menu-titulo, .header-btn, .header-btn-expert{
     white-space: nowrap;
 }
 
@@ -166,9 +163,12 @@ body{
     border-radius: 20px;
     background-color:white;
     font-size: 14px;
-    color:#1f1f1f;
     font-weight: 500;
     cursor: pointer;
+}
+
+.header-btn-expert a{
+    color:black;
 }
 
 .header-btn{
@@ -246,9 +246,7 @@ main{
     flex-direction: column;
     transition: filter 0.3s ease, opacity 0.3s ease;}
 
-body:has(.menu-header:hover > div) main,
-body:has(.header-btn:hover) main{
-    filter: blur(8px);
+body:has(.menu-header:hover > div) main{    filter: blur(8px);
     opacity: 0.6;
     pointer-events: none;
 }
@@ -381,6 +379,11 @@ body:has(.header-btn:hover) main{
     line-height: 30px;
 }
 
+.card-title-span{
+    padding: 0 10px;
+    padding-top:10px;
+}
+
 .contenedor-seccion h2{
     font-size: clamp(30px,4vw,45px);
     font-weight: 450;
@@ -404,10 +407,8 @@ body:has(.header-btn:hover) main{
 .contenedor-seccion__card{
     display:flex;
     flex-direction:column;
-    height: auto;
     overflow: hidden;
     border-radius:8px;
-    height: auto;
     background-color:#1f1f1f;
     padding:10px;
     gap:8px;
@@ -423,20 +424,21 @@ body:has(.header-btn:hover) main{
     cursor:pointer;
 }
 
-.contenedor-seccion__card span{
+.contenedor-seccion__card p{
     font-style:italic;
-    font-size:15px;
+    font-size:13px;
     padding: 0 10px;
 }
 
 .contenedor-seccion__card ul{
     list-style-position: inside;
     padding: 0 10px;
-    font-size:14px;
-    gap:10px;
+    font-size:13px;
+    gap:2px;
     display: flex;
     flex-direction: column;
     margin-bottom:30px;
+    line-height: 1.8;
 }
 
 .contenedor-seccion__card .card-title-span{
@@ -478,15 +480,14 @@ body:has(.header-btn:hover) main{
     align-items:center;
 }
 
+.footer-logos a{
+    color:white;
+    cursor:pointer;
+}
+
 .footer-rights{
     display: flex;
     align-items:center;
-}
-
-.footer-logos svg{
-    color:white;
-    width:12px;
-    height:12px;
 }
 
 .footer{
@@ -511,11 +512,9 @@ body:has(.header-btn:hover) main{
     font-size:inherit;
 }
 
-
 .cookies-panel{
     margin:auto;
     width: min(500px, 90vw);
-    height: min(700px, 90vw);
     max-height: 85vh;
     background-color: black;
     color:white;
@@ -545,8 +544,6 @@ body:has(.header-btn:hover) main{
 .cookies-panel p{
     font-size: 14px;
     color: #a1a0a0;
-    align-items:center;
-    gap:20px;
     padding:12px 0;
     font-weight: 500;
     line-height: 1.5;
@@ -598,7 +595,6 @@ body:has(.header-btn:hover) main{
     content: "";
     width: 10px;
     height: 10px;
-    border-radius: 10%;
     background-color: black;
     clip-path: polygon(10% 45%, 35% 85%, 90% 15%, 82% 7%, 35% 69%, 18% 37%);
     transform: scale(0);
@@ -606,9 +602,7 @@ body:has(.header-btn:hover) main{
 
 .cookies-opcion input:checked{
     background-color: white;
-    border-color: white;
-    color:black;
-}
+    border-color: white;}
 
 .cookies-opcion input:checked::before{
    transform: scale(1);
@@ -631,16 +625,8 @@ body:has(.header-btn:hover) main{
     font-weight: 500;
     background-color: white;
     border-radius: 20px;
-    padding: 10px 200px;
-}
-
-.cookies-btn{
-    border: none;
-    border-radius: 20px;
-    padding: 10px 24px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
+    padding: 10px 0px;
+    width:100%
 }
 
 .lenguaje-btn{
@@ -671,10 +657,6 @@ body:has(.header-btn:hover) main{
 }
 
 @media screen and (max-width: 1280px){
-    .logo{
-        flex-direction: row;
-    }
-
     .navegador-header{
         display:none;
     }
@@ -702,20 +684,6 @@ body:has(.header-btn:hover) main{
 
     .nav-cont{
         order:1;
-    }
-
-    .navegador-header:popover-open .menu-solo-celular{
-        display: flex;
-    }
-
-    .navegador-header .btn-experto-celular{
-        background-color: white;
-        color: black;
-        border-radius: 20px;
-        padding: 10px 20px;
-        text-align: center;
-        font-size: 14px;
-        font-weight: 500;
     }
 
     .navegador-header:popover-open{
@@ -755,12 +723,9 @@ body:has(.header-btn:hover) main{
         width: auto;
     }
 
-    .navegador-header:popover-open a{
+    .navegador-header:popover-open a,
+    .navegador-header:popover-open .menu-titulo{
         white-space: normal;
-    }
-
-    .button.button-claro-panel-izquierdo{
-        align-self:center;
     }
 }
 
@@ -780,43 +745,13 @@ body:has(.header-btn:hover) main{
     }
 
     .buttons-panel-izquierdo{
-        display:flex;
         flex-direction:column;
         align-self:center;
         max-width:100%;
         text-align:center;
     }
 
-    .navegador-header{
-        display: none;
-    }   
-
-    .header{
-        padding: 15px 20px;
-        gap: 20px;  
-    }
-
-    .lupa-header{
-        margin-left: auto;
-        order:0;
-        }
-
-    .bi-layout-sidebar{
-        display: block;
-        color: white;
-
-    } 
-    
-    .nav-cont{
-        order: 1;
-        cursor: pointer;
-    }
-
     .contenedor-seccion__tarjetas{
-        display: flex;
-        flex-direction:row;
-        gap:25px;
-        width: 100%;
         flex-wrap:wrap;
     }
 
@@ -833,6 +768,7 @@ body:has(.header-btn:hover) main{
     .header{
         margin-top:20px;
         padding:0px;
+        gap:20px;
     }
 }
 
