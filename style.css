@@ -21,13 +21,12 @@
 body{
     background-color: var(--negro);
     color: var(--blanco);
-    padding: 0 clamp(16px,5vw,60px);
+    padding: 0 clamp(16px,5vw,70px);
 }
 
 .logo{
     align-items: center;
     display: flex;
-    gap: 15px;
     cursor: pointer;
 }
 
@@ -49,6 +48,9 @@ body{
 
 .logo a{
     color: var(--blanco);
+    gap:10px;
+    display: flex;
+    align-items:center;
 }
 
 
@@ -59,7 +61,7 @@ body{
     padding: 5px 0;
     flex-direction: row;
     color: var(--blanco);
-    gap:60px;
+    gap: clamp(20px, 3vw, 50px);
     position: relative;
     justify-content: start;
 }
@@ -105,6 +107,10 @@ body{
     text-align: start; 
     left: 0;
     gap: 80px;
+}
+
+.menu-header .menu-titulo{
+    font-size:12px; 
 }
 
 
@@ -292,8 +298,8 @@ body:has(.menu-header:hover > div) main{
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    padding-top:70px;
-    gap:20px;
+    padding-top:65px;
+    gap:25px;
     flex-wrap:wrap;
 }
 
@@ -301,7 +307,7 @@ body:has(.menu-header:hover > div) main{
     display: flex;
     height: auto;
     overflow: hidden;
-    border-radius:10px;
+    border-radius:8px;
 }
 
 .hero-panel img{
@@ -329,9 +335,9 @@ body:has(.menu-header:hover > div) main{
 }
 
 .hero-panel-izquierdo h1{
-    font-size: clamp(40px, 5vw,59px);
+    font-size: clamp(40px, 5vw,60px);
     font-weight: 500;
-    line-height: 1.2;
+    line-height: 1;
     text-wrap:pretty;
 }
 
@@ -341,11 +347,13 @@ body:has(.menu-header:hover > div) main{
     text-wrap:pretty;
     padding-top:40px;
     line-height: 30px;
+    max-width: 95%;
 
 }
 
 .hero-panel-izquierdo, .hero-panel{
-    flex: 1 1 400px;
+    flex: 1 1 0;
+    min-width:0;
 }
 
 .buttons-panel-izquierdo{
@@ -518,8 +526,9 @@ body:has(.menu-header:hover > div) main{
 
 .footer-logos{
     display:flex;
-    gap:20px;
+    gap:25px;
     align-items:center;
+    font-size:14px;
 }
 
 .footer-logos a{
@@ -535,7 +544,7 @@ body:has(.menu-header:hover > div) main{
 .footer{
     display: flex;
     justify-content: space-between;
-    padding: 50px 0;
+    padding: 38px 0;
     margin-top:30px;
 }
 
@@ -772,15 +781,22 @@ body:has(.menu-header:hover > div) main{
     }
 }
 
+@media screen and (max-width: 1257px) {
+    .buttons-panel-izquierdo{
+        flex-direction: column;
+        align-items: center;
+        align-self: center;
+    }
+
+    .hero-panel{
+        align-self:start;
+    }
+}
+
 @media screen and (max-width: 1024px) {
 
     .hero{
-        padding-top:40px;
-    }
-
-    .hero-panel-izquierdo, .hero-panel{
-    flex: 1 1 100%;
-    min-width: 0;
+        padding-top:80px;
     }
 
     .contenedor-seccion h2{
@@ -790,16 +806,17 @@ body:has(.menu-header:hover > div) main{
     .buttons-panel-izquierdo{
         flex-direction:column;
         align-self:center;
+        align-items:center;
         max-width:100%;
         text-align:center;
     }
 
-    .contenedor-seccion__tarjetas{
-        flex-wrap:wrap;
+    .hero-panel{
+        align-self: start;
     }
 
     .contenedor-seccion__card{
-        flex: 0 1 300px;
+        flex: 0 3 300px;
     }
 
     .footer{
@@ -812,6 +829,22 @@ body:has(.menu-header:hover > div) main{
         margin-top:20px;
         padding:0px;
         gap:20px;
+    }
+}
+
+@media screen and (max-width: 783px){
+
+    .hero{
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-panel-izquierdo, .hero-panel{
+        flex:none;
+    }
+
+    .hero-panel{
+        align-self:stretch;
     }
 }
 
@@ -834,11 +867,26 @@ body:has(.menu-header:hover > div) main{
         font-size: 14px;
         font-weight: 500;
     }
+
+    .contenedor-seccion__tarjetas{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 520px){
     .button-claro-panel-izquierdo, .button-oscuro-panel-izquierdo{
         white-space: normal;
+    }
+
+    .contenedor-seccion__tarjetas{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 297px){
+    .cookies-footer{
+       text-align:center;
     }
 }
