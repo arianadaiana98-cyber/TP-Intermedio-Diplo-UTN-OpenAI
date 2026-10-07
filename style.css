@@ -45,7 +45,7 @@ body{
     background-color: black;
     display: flex;
     align-items: center;
-    padding: 5px 20px;
+    padding: 5px 0;
     flex-direction: row;
     color: white;
     gap:60px;
@@ -121,6 +121,16 @@ body{
     gap:25px;
 }
 
+.menu-horizontal:hover .menu-titulo,
+.menu-horizontal:hover .menu-header a{
+    color: #828282;
+}
+
+.menu-horizontal .menu-header:hover .menu-titulo,
+.menu-horizontal .menu-header:hover a{
+    color:white;
+}
+
 .btn-menu{
     display:none;
     background:none;
@@ -165,6 +175,11 @@ body{
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
+    transition: background-color 0.3s ease
+}
+
+.header-btn-expert:hover{
+    background-color: #c8c6c6;
 }
 
 .header-btn-expert a{
@@ -182,6 +197,11 @@ body{
     align-items: center;
     display: flex;
     position: relative;
+    transition: background-color 0.3s ease
+}
+
+.header-btn:hover{
+    background-color: #343434;
 }
 
 .menu-vertical-span{
@@ -244,9 +264,11 @@ main{
     display: flex;
     gap:80px;
     flex-direction: column;
-    transition: filter 0.3s ease, opacity 0.3s ease;}
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
 
-body:has(.menu-header:hover > div) main{    filter: blur(8px);
+body:has(.menu-header:hover > div) main{ 
+    filter: blur(8px);
     opacity: 0.6;
     pointer-events: none;
 }
@@ -298,7 +320,7 @@ body:has(.menu-header:hover > div) main{    filter: blur(8px);
 .hero-panel-izquierdo h1{
     font-size: clamp(40px, 5vw,59px);
     font-weight: 500;
-    line-height: 60px;
+    line-height: 1.2;
     text-wrap:pretty;
 }
 
@@ -338,6 +360,12 @@ body:has(.menu-header:hover > div) main{    filter: blur(8px);
     justify-content: center;
     align-items:center;
     cursor:pointer;
+    transition: background-color 0.3s ease
+}
+
+.button-claro-panel-izquierdo:hover{
+    background-color: #c8c6c6;
+
 }
 
 .button-claro-panel-izquierdo a{
@@ -356,6 +384,12 @@ body:has(.menu-header:hover > div) main{    filter: blur(8px);
     font-weight: 500;
     white-space: nowrap;
     cursor:pointer;
+    transition: background-color 0.3s ease
+}
+
+.button-oscuro-panel-izquierdo:hover{
+    background-color: #343434;
+
 }
 
 .button-oscuro-panel-izquierdo a{
@@ -379,11 +413,6 @@ body:has(.menu-header:hover > div) main{    filter: blur(8px);
     line-height: 30px;
 }
 
-.card-title-span{
-    padding: 0 10px;
-    padding-top:10px;
-}
-
 .contenedor-seccion h2{
     font-size: clamp(30px,4vw,45px);
     font-weight: 450;
@@ -402,6 +431,7 @@ body:has(.menu-header:hover > div) main{    filter: blur(8px);
     height: auto;
     object-fit: contain;
     display: block;
+    border-radius: 4px;
 }
 
 .contenedor-seccion__card{
@@ -411,7 +441,7 @@ body:has(.menu-header:hover > div) main{    filter: blur(8px);
     border-radius:8px;
     background-color:#1f1f1f;
     padding:10px;
-    gap:8px;
+    gap:5px;
     flex:1;
 }
 
@@ -420,32 +450,33 @@ body:has(.menu-header:hover > div) main{    filter: blur(8px);
     text-decoration: none;
 }
 
-.contenedor-seccion__card--button{
-    cursor:pointer;
-}
-
 .contenedor-seccion__card p{
     font-style:italic;
     font-size:13px;
-    padding: 0 10px;
+    padding: 0 15px;
+    line-height: 1.5;
+    margin: 8px 0 0;
 }
 
 .contenedor-seccion__card ul{
-    list-style-position: inside;
+    list-style-position: outside;
     padding: 0 10px;
+    padding-top: 10px;
     font-size:13px;
-    gap:2px;
+    gap:5px;
     display: flex;
     flex-direction: column;
+    margin-left:16px;
     margin-bottom:30px;
     line-height: 1.8;
 }
 
-.contenedor-seccion__card .card-title-span{
-    font-size:20px;
+.card-title-span{
+    font-size:21px;
     font-style:normal;
-    font-weight:500;
-}
+    font-weight:450;
+    padding: 10px 15px 0;
+}  
 
 .contenedor-seccion__card--button{
     display: flex;
@@ -460,7 +491,7 @@ body:has(.menu-header:hover > div) main{    filter: blur(8px);
     margin-top:auto;
     margin-bottom:10px;
     font-weight: 500;
-    align-self:stretch;
+    cursor:pointer;
 }
 
 .contenedor-seccion__card a{
@@ -602,7 +633,8 @@ body:has(.menu-header:hover > div) main{    filter: blur(8px);
 
 .cookies-opcion input:checked{
     background-color: white;
-    border-color: white;}
+    border-color: white;
+}
 
 .cookies-opcion input:checked::before{
    transform: scale(1);
@@ -667,7 +699,7 @@ body:has(.menu-header:hover > div) main{    filter: blur(8px);
 
     .header{
         gap:20px;
-        padding: 15px 20px
+        padding: 15px 0;
     }
 
     .lupa-header{
@@ -756,7 +788,7 @@ body:has(.menu-header:hover > div) main{    filter: blur(8px);
     }
 
     .contenedor-seccion__card{
-        flex: 1 1 300px;
+        flex: 0 1 300px;
     }
 
     .footer{
